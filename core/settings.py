@@ -47,6 +47,7 @@ if not DEBUG:
 
 # Application definition
 DJANGO_APPS = [
+	'apps.contas',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -61,7 +62,6 @@ THIRD_APPS = [
 ]
 
 PROJECT_APPS = [
-	'apps.contas',
 	'apps.base',
 	'apps.pages',
 ]
@@ -176,6 +176,8 @@ SESSION_TIMEOUT_REDIRECT = 'http://localhost:8000/contas/timeout/'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Internationalization

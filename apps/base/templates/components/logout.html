@@ -1,0 +1,19 @@
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow-lg border-0">
+            <div class="modal-header bg-danger text-white">
+                <h6 class="modal-title" id="logoutModalLabel">
+                    <i class="fas fa-exclamation-triangle me-2"></i> Atenção!
+                </h6>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p class="lead">Você tem certeza que deseja sair do sistema?</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button class="btn btn-danger" onclick="location.href='{% url 'logout' %}'">Sair</button>
+            </div>
+        </div>
+    </div>
+</div>
