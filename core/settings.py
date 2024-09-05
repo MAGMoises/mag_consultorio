@@ -71,6 +71,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_APPS + PROJECT_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+	'django_session_timeout.middleware.SessionTimeoutMiddleware', # Timeout
     'django.middleware.common.CommonMiddleware',
     'corsheaders.middleware.CorsMiddleware', # Cors
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -166,6 +167,16 @@ REQUESTLOGS = {
     # 'IGNORE_USERS': [],
     # 'IGNORE_PATHS': None,
 }
+
+# SESSION_EXPIRE_SECONDS = 10 # minuts
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+# SESSION_EXPIRE_AFTER_LAST_ACTIVITY_GRACE_PERIOD = 60
+SESSION_TIMEOUT_REDIRECT = 'http://localhost:8000/contas/timeout/'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
