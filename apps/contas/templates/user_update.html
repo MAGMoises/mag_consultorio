@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Atualizar Usuário{% endblock %}
+{% block content %}
+<div class="container mt-5 p-4 bg-light rounded shadow-sm">
+  <h3 class="text-center mb-4 text-primary">Atualizar Usuário</h3>
+  <form method="post" class="needs-validation" novalidate>
+    {% csrf_token %}
+    <div class="row">
+      {{form}}
+    </div>
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-success px-4">Salvar Alterações</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
